@@ -8,6 +8,14 @@
 // const a = 5;
 // const b = 10;
 
+// let a = 8;
+// let b = 9;
+
+function swap(a, b) {
+  [a, b] = [b, a];
+  return { a, b };
+}
+console.log(swap(50, 40));
 // function destructure(a, b) {
 //   // [a, b] = [5, 10];
 //   [a, b] = [b, a];
@@ -21,6 +29,8 @@
 // let b = 9;
 // [a, b] = [b, a];
 // console.log("a:", a, "b:", b);
+
+// -----------------------------------------------
 
 // Problem 2: Check Even or Odd  [Easy]
 // Description: Write a function isEven(n) that returns true if a number is even, and false if it is odd.
@@ -37,7 +47,7 @@ function isEven(n) {
     return false;
   }
 }
-console.log(isEven(7));
+console.log(isEven(4));
 
 // let a = 7;
 // if (a % 2 === 0) {
@@ -52,6 +62,8 @@ console.log(isEven(7));
 
 // }
 
+// --------------------------------------------
+
 // Problem 3: Find the Largest of Three Numbers  [Easy]
 // Description: Write a function largest(a, b, c) that returns the largest of three numbers.
 // Example:
@@ -59,10 +71,12 @@ console.log(isEven(7));
 // Hint: Use Math.max() or if-else conditions.
 
 //Answer of the Problem-3:
-// function largest(a, b, c) {
-//   return Math.max(a, b, c);
-// }
-// console.log(largest(3, 5, 8));
+function largest(a, b, c) {
+  return Math.max(a, b, c);
+}
+console.log(largest(3, 51, 8));
+
+// ----------------------------------------
 
 // Problem 4: Celsius to Fahrenheit  [Easy]
 // Description: Write a function toFahrenheit(celsius) that converts a Celsius temperature to Fahrenheit.
@@ -72,10 +86,12 @@ console.log(isEven(7));
 
 // Answer of the Problem-4:
 
-// function toFahrenheit(celsius) {
-//   return (celsius * 9) / 5 + 32;
-// }
-// console.log(toFahrenheit(100));
+function toFahrenheit(celsius) {
+  return (celsius * 9) / 5 + 32;
+}
+console.log(toFahrenheit(0));
+
+// ----------------------------------------
 
 // Problem 5: Check Positive, Negative or Zero  [Easy]
 // Description: Write a function checkSign(n) that returns 'positive', 'negative', or 'zero' based on the value of n.
@@ -85,14 +101,14 @@ console.log(isEven(7));
 
 // Answer of the Problem-5:
 
-// function checkSign(n) {
-//   if (n === 0) {
-//     return "zero";
-//   }
-//   if (n > 0) {
-//     return "positive";
-//   } else {
-//     return "negative";
-//   }
-// }
-// console.log(checkSign(0));
+function checkSign(n) {
+  if (n === 0) {
+    return "zero";
+  }
+  if (n > 0) {
+    return "positive";
+  } else {
+    return "negative";
+  }
+}
+console.log(checkSign(2));
