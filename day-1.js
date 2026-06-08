@@ -30,6 +30,15 @@
 
 //  Answer of Problem -2 :
 
+function isEven(n) {
+  if (n % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(isEven(7));
+
 // let a = 7;
 // if (a % 2 === 0) {
 //   console.log(true);
@@ -63,10 +72,10 @@
 
 // Answer of the Problem-4:
 
-function toFahrenheit(celsius) {
-  return (celsius * 9) / 5 + 32;
-}
-console.log(toFahrenheit(100));
+// function toFahrenheit(celsius) {
+//   return (celsius * 9) / 5 + 32;
+// }
+// console.log(toFahrenheit(100));
 
 // Problem 5: Check Positive, Negative or Zero  [Easy]
 // Description: Write a function checkSign(n) that returns 'positive', 'negative', or 'zero' based on the value of n.
