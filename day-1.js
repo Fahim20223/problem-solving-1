@@ -63,6 +63,11 @@
 
 // Answer of the Problem-4:
 
+function toFahrenheit(celsius) {
+  return (celsius * 9) / 5 + 32;
+}
+console.log(toFahrenheit(100));
+
 // Problem 5: Check Positive, Negative or Zero  [Easy]
 // Description: Write a function checkSign(n) that returns 'positive', 'negative', or 'zero' based on the value of n.
 // Example:
