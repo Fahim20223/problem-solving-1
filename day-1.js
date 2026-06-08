@@ -30,9 +30,55 @@
 
 //  Answer of Problem -2 :
 
-let a = 7;
-if (a % 2 === 0) {
-  console.log(true);
-} else {
-  console.log(false);
-}
+// let a = 7;
+// if (a % 2 === 0) {
+//   console.log(true);
+// } else {
+//   console.log(false);
+// }
+// function isEven(n){
+//   if(n%2===0){
+//     console.log(true)
+//   } return {console.log(false)}
+
+// }
+
+// Problem 3: Find the Largest of Three Numbers  [Easy]
+// Description: Write a function largest(a, b, c) that returns the largest of three numbers.
+// Example:
+// Input: 3, 7, 5  → Output: 7
+// Hint: Use Math.max() or if-else conditions.
+
+//Answer of the Problem-3:
+// function largest(a, b, c) {
+//   return Math.max(a, b, c);
+// }
+// console.log(largest(3, 5, 8));
+
+// Problem 4: Celsius to Fahrenheit  [Easy]
+// Description: Write a function toFahrenheit(celsius) that converts a Celsius temperature to Fahrenheit.
+// Example:
+// Input: 0   → Output: 32Input: 100 → Output: 212
+// Hint: Formula: (C × 9/5) + 32
+
+// Answer of the Problem-4:
+
+// Problem 5: Check Positive, Negative or Zero  [Easy]
+// Description: Write a function checkSign(n) that returns 'positive', 'negative', or 'zero' based on the value of n.
+// Example:
+// Input: -5  → Output: 'negative'Input: 0   → Output: 'zero'
+// Hint: Use if-else if-else statements.
+
+// Answer of the Problem-5:
+
+// function checkSign(n) {
+//   if (n === 0) {
+//     return "zero";
+//   }
+//   if (n > 0) {
+//     return "positive";
+//   } else {
+//     return "negative";
+//   }
+// }
+// console.log(checkSign(0));
