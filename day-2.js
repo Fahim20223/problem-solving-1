@@ -33,3 +33,29 @@ function countVowels(str) {
   return countIt;
 }
 console.log(countVowels("javascript"));
+
+// Problem 8: Check Palindrome  [Easy]
+// Description: Write a function isPalindrome(str) that returns true if the string reads the same forwards and backwards.
+// Example:
+// Input: 'racecar'  → Output: trueInput: 'hello'    → Output: false
+// Hint: Compare the string to its reverse.
+
+// Answer of the Problem-8 :
+// function isPalindrome(str){
+
+// }
+
+// Problem 9: Capitalize First Letter of Each Word  [Easy]
+// Description: Write a function titleCase(str) that capitalizes the first letter of every word in a string.
+// Example:
+// Input: 'hello world'  → Output: 'Hello World'
+// Hint: Use split(' '), map(), and join(' ').
+
+// Answer of the problem 9 :
+function titleCase(str) {
+  return str
+    .split(" ")
+    .map((siu) => siu[0].toUpperCase() + siu.slice(1))
+    .join(" ");
+}
+console.log(titleCase("hello world"));
