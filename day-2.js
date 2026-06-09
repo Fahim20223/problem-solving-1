@@ -41,9 +41,11 @@ console.log(countVowels("javascript"));
 // Hint: Compare the string to its reverse.
 
 // Answer of the Problem-8 :
-// function isPalindrome(str){
-
-// }
+function isPalindrome(str) {
+  const revers = str.split("").reverse().join("");
+  return str === revers;
+}
+console.log(isPalindrome("racecar"));
 
 // Problem 9: Capitalize First Letter of Each Word  [Easy]
 // Description: Write a function titleCase(str) that capitalizes the first letter of every word in a string.
@@ -59,3 +61,15 @@ function titleCase(str) {
     .join(" ");
 }
 console.log(titleCase("hello world"));
+
+// Problem 10: Count Occurrences of a Character  [Easy]
+// Description: Write a function countChar(str, char) that returns how many times a character appears in a string.
+// Example:
+// Input: 'banana', 'a'  → Output: 3
+// Hint: Use split(char).length - 1 or a loop.
+
+// Answer of the Problem 10 :
+function countChar(str, char) {
+  return str.split(char).length - 1;
+}
+console.log(countChar("banana", "a"));
