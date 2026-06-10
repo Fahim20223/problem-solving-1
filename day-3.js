@@ -71,4 +71,13 @@ console.log(flattenArray([1, [2, 3], [4, 5]]));
 // Input: [1,2,3,4,5], 2  → Output: [[1,2],[3,4],[5]]
 // Hint: Use a while loop with slice().
 
-function chunkArray(arr, size) {}
+function chunkArray(arr, size) {
+  let chunk = [];
+  let index = 0;
+  while (index < arr.length) {
+    chunk.push(arr.slice(index, index + size));
+    index += size;
+  }
+  return chunk;
+}
+console.log(chunkArray([1, 2, 3, 4, 5], 2));
