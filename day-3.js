@@ -32,7 +32,7 @@ function findMax(arr) {
   }
   return onTop;
 }
-console.log(findMax([1, 2, 3, 4]));
+console.log(findMax([10, 2, 3, 4]));
 
 // Problem 13: Remove Duplicates from Array  [Easy]
 // Description: Write a function removeDuplicates(arr) that returns a new array with duplicate values removed.
@@ -40,14 +40,35 @@ console.log(findMax([1, 2, 3, 4]));
 // Input: [1, 2, 2, 3, 3, 4]  → Output: [1, 2, 3, 4]
 // Hint: Use Set or filter() with indexOf().
 
+// Answer of the problem 13 :
+function removeDuplicates(arr) {
+  let array = [];
+  for (let i = 0; i < arr.length; i++) {
+    const element = arr[i];
+
+    if (!array.includes(element)) {
+      array.push(element);
+    }
+  }
+  return array;
+}
+console.log(removeDuplicates([1, 2, 2, 2, 2, 2, 43, 34, 43, 4, 4]));
+
 // Problem 14: Flatten a Nested Array  [Medium]
 // Description: Write a function flattenArray(arr) that flattens one level of a nested array.
 // Example:
 // Input: [1, [2, 3], [4, 5]]  → Output: [1, 2, 3, 4, 5]
 // Hint: Use flat() or reduce() with concat().
 
+function flattenArray(arr) {
+  return arr.flat();
+}
+console.log(flattenArray([1, [2, 3], [4, 5]]));
+
 // Problem 15: Chunk an Array  [Medium]
 // Description: Write a function chunkArray(arr, size) that splits an array into chunks of a given size.
 // Example:
 // Input: [1,2,3,4,5], 2  → Output: [[1,2],[3,4],[5]]
 // Hint: Use a while loop with slice().
+
+function chunkArray(arr, size) {}
