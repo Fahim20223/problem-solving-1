@@ -9,11 +9,19 @@ function countProperties(obj) {
   return Object.keys(obj).length;
 }
 console.log(countProperties({ a: 1, b: 2, c: 3, d: 4, f: 6 }));
+
 // Problem 17: Merge Two Objects  [Easy]
 // Description: Write a function mergeObjects(obj1, obj2) that merges two objects into one. If keys conflict, the second object's values win.
 // Example:
 // Input: {a:1}, {b:2}  → Output: {a:1, b:2}
 // Hint: Use the spread operator or Object.assign().
+
+// Answer of the Problem number 17 :
+
+function mergeObjects(obj1, obj2) {
+  return { ...obj1, ...obj2 };
+}
+console.log(mergeObjects({ a: 1 }, { b: 2 }));
 
 // Problem 18: FizzBuzz  [Easy]
 // Description: Write a function fizzBuzz(n) that prints numbers from 1 to n. For multiples of 3 print 'Fizz', multiples of 5 print 'Buzz', multiples of both print 'FizzBuzz'.
