@@ -70,5 +70,22 @@ console.log(invertObject({ a: 1, b: 2 }));
 
 // Answer of the Problem 20 :
 function findDuplicateNames(arr) {
-  const names = arr.map();
+  const counting = {};
+  const duplicate = [];
+  for (let person of arr) {
+    const name = person.name;
+    counting[name] = (counting[name] || 0) + 1;
+    if (counting[name] === 2) {
+      duplicate.push(name);
+    }
+  }
+  return duplicate;
 }
+console.log(
+  findDuplicateNames([
+    { name: "Ali" },
+    { name: "Sarah" },
+    { name: "Sarah" },
+    { name: "Ali" },
+  ]),
+);
