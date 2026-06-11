@@ -52,16 +52,23 @@ fizzBuzz(15);
 // Hint: Use Object.entries() and reduce().
 
 // Answer of the Problem number 19 :
-// function invertObject(obj) {
-//   return Object.entries(obj).reduce((en, entry) => {
-//     const [key, val] = entry;
-//     en[val] = key;
-//     return en;
-//   });
-// }
-// console.log(mergeObjects({ a: 1, b: 2 }));
+
+function invertObject(obj) {
+  const result = {};
+  for (let key in obj) {
+    result[obj[key]] = key;
+  }
+  return result;
+}
+
+console.log(invertObject({ a: 1, b: 2 }));
 // Problem 20: Find Duplicate Values in Array of Objects  [Medium]
 // Description: Given an array of objects, write a function findDuplicateNames(arr) that returns names that appear more than once.
 // Example:
 // Input: [{name:'Ali'},{name:'Sara'},{name:'Ali'}]Output: ['Ali']
 // Hint: Use a frequency map (object) to count occurrences.
+
+// Answer of the Problem 20 :
+function findDuplicateNames(arr) {
+  const names = arr.map();
+}
