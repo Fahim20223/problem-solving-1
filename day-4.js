@@ -29,12 +29,37 @@ console.log(mergeObjects({ a: 1 }, { b: 2 }));
 // Input: 15Output: 1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz,13,14,FizzBuzz
 // Hint: Check divisibility with the % operator in the right order.
 
+// Answer Of problem 18 :
+function fizzBuzz(n) {
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log("FizzBuzz");
+    } else if (i % 3 === 0) {
+      console.log("Fizz");
+    } else if (i % 5 === 0) {
+      console.log("Buzz");
+    } else {
+      console.log(i);
+    }
+  }
+}
+fizzBuzz(15);
+
 // Problem 19: Invert an Object  [Easy]
 // Description: Write a function invertObject(obj) that swaps the keys and values of an object.
 // Example:
 // Input: {a: 1, b: 2}  → Output: {1: 'a', 2: 'b'}
 // Hint: Use Object.entries() and reduce().
 
+// Answer of the Problem number 19 :
+// function invertObject(obj) {
+//   return Object.entries(obj).reduce((en, entry) => {
+//     const [key, val] = entry;
+//     en[val] = key;
+//     return en;
+//   });
+// }
+// console.log(mergeObjects({ a: 1, b: 2 }));
 // Problem 20: Find Duplicate Values in Array of Objects  [Medium]
 // Description: Given an array of objects, write a function findDuplicateNames(arr) that returns names that appear more than once.
 // Example:
