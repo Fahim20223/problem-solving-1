@@ -20,9 +20,21 @@ console.log(factorial(5));
 // Input: 6  → Output: 8 (0,1,1,2,3,5,8...)
 // Hint: Try both iterative and recursive approaches.
 
-// function fibonacci(n){
+function fibonacci(n) {
+  if (n <= 1) return n;
 
-// }
+  let a = 0;
+  let b = 1;
+
+  for (let i = 2; i <= n; i++) {
+    let temp = a + b;
+    a = b;
+    b = temp;
+  }
+
+  return b;
+}
+console.log(fibonacci(6));
 
 // Problem 23: Create a Counter with Closure  [Medium]
 // Description: Write a function makeCounter() that returns an object with increment, decrement, and getCount methods using closure.
