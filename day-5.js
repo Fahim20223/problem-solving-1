@@ -5,15 +5,22 @@
 // Hint: Base case: factorial(0) = 1. Recursive case: n * factorial(n-1).
 
 //  Answer of the Problem 21 :
+// function factorial(n) {
+//   let total = 1;
+//   for (let i = 1; i <= n; i++) {
+//     total = total * i;
+//   }
+//   return total;
+// }
+// console.log(factorial(5));
+
 function factorial(n) {
-  let total = 1;
-  for (let i = 1; i <= n; i++) {
-    total = total * i;
+  if (n == 0) {
+    return 1;
   }
-  return total;
+  return n * factorial(n - 1);
 }
 console.log(factorial(5));
-
 // Problem 22: Fibonacci Sequence  [Easy]
 // Description: Write a function fibonacci(n) that returns the nth number in the Fibonacci sequence.
 // Example:
@@ -21,20 +28,22 @@ console.log(factorial(5));
 // Hint: Try both iterative and recursive approaches.
 
 function fibonacci(n) {
-  if (n <= 1) return n;
-
+  if (n <= 1) {
+    return n;
+  }
   let a = 0;
   let b = 1;
 
   for (let i = 2; i <= n; i++) {
-    let temp = a + b;
+    let total = a + b;
     a = b;
-    b = temp;
+    b = total;
   }
-
   return b;
 }
-console.log(fibonacci(6));
+console.log(fibonacci(8));
+
+// console.log(fibonacci(6));
 
 // Problem 23: Create a Counter with Closure  [Medium]
 // Description: Write a function makeCounter() that returns an object with increment, decrement, and getCount methods using closure.
@@ -42,8 +51,9 @@ console.log(fibonacci(6));
 // const c = makeCounter();c.increment(); c.increment();c.getCount(); // 2
 // Hint: Use a variable inside the outer function that inner functions can access.
 
-// function makeCounter()
-
+// Answer of the problem 23 :
+function makeCounter() {}
+// console.log(makeCounter(2));
 // Problem 24: Curry a Function  [Medium]
 // Description: Write a function curry(fn) that converts a function of two arguments into a curried version.
 // Example:
