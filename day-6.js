@@ -50,8 +50,26 @@ delay(1000)
 // await getUserData(1);// returns {id:1, name:'Test User'}
 // Hint: Use async/await with a Promise that wraps setTimeout.
 
-// Answer of
+// Answer of the Problem 29 :
+async function getUserData(id) {
+  const user = await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        id: id,
+        name: "Test User",
+      });
+    }, 500);
+  });
 
+  return user;
+}
+async function test() {
+  const user = await getUserData(1);
+
+  console.log(user);
+}
+
+test();
 // Problem 30: Optional Chaining & Nullish Coalescing  [Easy]
 // Description: Given a nested object that may have missing properties, safely access a deeply nested value using optional chaining (?.) and provide a default using nullish coalescing (??).
 // Example:
