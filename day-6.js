@@ -5,8 +5,8 @@
 // Hint: Use: const { firstName: name, lastName, age } = user;
 
 // Answer of the problem 26 :
-const user = { firstName: "Sara", lastName: "Khan", age: 25 };
-const { firstName: name, lastName, age } = user;
+const user1 = { firstName: "Sara", lastName: "Khan", age: 25 };
+const { firstName: name, lastName, age } = user1;
 console.log(age);
 
 // Problem 27: Merge Arrays with Spread  [Easy]
@@ -75,3 +75,8 @@ test();
 // Example:
 // const user = {profile: null};const city = user?.profile?.address?.city ?? 'Unknown';// Output: 'Unknown'
 // Hint: Chain ?. for each level; use ?? for the fallback.
+
+// Answer Of the Problem 30 :
+const user = { profile: null };
+const city = user?.profile?.address?.city ?? "Unknown";
+console.log(city);
