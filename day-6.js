@@ -4,6 +4,11 @@
 // const user = {firstName:'Sara', lastName:'Khan', age:25};// Extract: name='Sara', lastName='Khan', age=25
 // Hint: Use: const { firstName: name, lastName, age } = user;
 
+// Answer of the problem 26 :
+const user = { firstName: "Sara", lastName: "Khan", age: 25 };
+const { firstName: name, lastName, age } = user;
+console.log(age);
+
 // Problem 27: Merge Arrays with Spread  [Easy]
 // Description: Write a function mergeArrays(...arrays) that accepts any number of arrays and merges them into one using the spread operator.
 // Example:
