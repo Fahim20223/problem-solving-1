@@ -15,6 +15,12 @@ console.log(age);
 // Input: [1,2], [3,4], [5]Output: [1,2,3,4,5]
 // Hint: Use rest parameters and spread inside reduce or flat.
 
+// Answer of the problem 27 :
+function mergeArrays(...arrays) {
+  return arrays.flat();
+}
+console.log(mergeArrays([1, 2], [3, 4], [5]));
+
 // Problem 28: Promise Chain  [Medium]
 // Description: Write a function delay(ms) that returns a Promise that resolves after ms milliseconds. Then chain two delays: first 1 second, then 2 seconds, logging a message after each.
 // Example:
