@@ -81,6 +81,7 @@ console.log(c.getCount());
 // Answer of the problem 23 :
 // function makeCounter() {}
 // console.log(makeCounter(2));
+
 // Problem 24: Curry a Function  [Medium]
 // Description: Write a function curry(fn) that converts a function of two arguments into a curried version.
 // Example:
@@ -88,8 +89,16 @@ console.log(c.getCount());
 // Hint: Return a function from inside a function.
 
 //Answer Of the Problem 24 :
-// function curry(fn) {}
+function curry(fn) {
+  return function (a) {
+    return function (b) {
+      return fn(a, b);
+    };
+  };
+}
+const add = curry((a, b) => a + b);
 
+console.log(add(2)(3));
 // function curry(fn){
 
 // }
@@ -103,3 +112,26 @@ console.log(c.getCount());
 // function memoize(fn){
 
 // }
+// Answer of the problem 25 :
+function memoize(fn) {
+  let cache = {};
+
+  return function (n) {
+    if (cache[n] !== undefined) {
+      return cache[n];
+    }
+
+    let result = fn(n);
+
+    cache[n] = result;
+
+    return result;
+  };
+}
+// const memoAdd = memoize((n) => {
+//   // console.log("Calculating...");
+//   return n + 10;
+// });
+const memoAdd = memoize((n) => n + 10);
+console.log(memoAdd(5));
+// console.log(memoAdd(5));
