@@ -23,11 +23,46 @@ console.log(safeJsonParse({ a: 1 }));
 // await retry(unstableFetch, 3);// Tries up to 3 times before failing
 // Hint: Use a loop with try/catch; only throw after all retries are exhausted.
 
+// Answer of the Problem 37 :
+
+async function retry(fn, times) {
+  let finalError;
+
+  for (let i = 0; i < times; i++) {
+    try {
+      return await fn();
+    } catch (error) {
+      finalError = error;
+    }
+  }
+  throw finalError;
+}
+
+async function testing() {
+  return "Hello";
+}
+retry(testing, 4).then(console.log);
+
+//failing test :
+async function test() {
+  throw new Error("failed");
+}
+retry(test, 5).catch((error) => {
+  console.log(error.message);
+});
+// console.log(retry(testing, 4));
+// retry(testing, 3).catch((error) => {
+//   console.log(error);
+// });
+
 // Problem 38: Implement Promise.all from Scratch  [Hard]
 // Description: Write a function myPromiseAll(promises) that behaves like Promise.all — resolves with an array of results when all resolve, rejects immediately if any rejects.
 // Example:
 // myPromiseAll([p1, p2, p3]).then(results => console.log(results));
 // Hint: Track resolved count and results array; reject on first failure.
+
+// Answer Of the Problem 38 :
+function myPromiseAll(promises) {}
 
 // Problem 39: Flatten Object (Deep)  [Medium]
 // Description: Write a function flattenObject(obj) that takes a deeply nested object and returns a flat object with dot-notation keys.
