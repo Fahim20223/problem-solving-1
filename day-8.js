@@ -47,7 +47,7 @@ retry(testing, 4).then(console.log);
 async function test() {
   throw new Error("failed");
 }
-retry(test, 5).catch((error) => {
+retry(test, 4).catch((error) => {
   console.log(error.message);
 });
 // console.log(retry(testing, 4));
@@ -62,7 +62,15 @@ retry(test, 5).catch((error) => {
 // Hint: Track resolved count and results array; reject on first failure.
 
 // Answer Of the Problem 38 :
-function myPromiseAll(promises) {}
+function myPromiseAll(promises) {
+  return Promise.all(promises);
+}
+myPromiseAll([
+  Promise.resolve(1),
+  Promise.resolve(2),
+  Promise.resolve(3),
+  Promise.resolve(4),
+]).then(console.log);
 
 // Problem 39: Flatten Object (Deep)  [Medium]
 // Description: Write a function flattenObject(obj) that takes a deeply nested object and returns a flat object with dot-notation keys.
