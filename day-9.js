@@ -44,6 +44,20 @@ console.log(isAnagram("hello", "world"));
 // Input: [1,2,4,5], n=5  → Output: 3
 // Hint: Use the formula: expected sum = n*(n+1)/2, then subtract actual sum.
 
+// Answer Of the Problem 43 :
+function findMissing(arr, n) {
+  const sum = (n * (n + 1)) / 2;
+  let actualSum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    // const element = arr[i ];
+    actualSum += arr[i];
+  }
+  //   for (let number of arr) {
+  //     actualSum += number;
+  //   }
+  return sum - actualSum;
+}
+console.log(findMissing([1, 2, 4, 5], 5));
 // Problem 44: Valid Parentheses  [Medium]
 // Description: Write a function isValidParentheses(str) that returns true if the string has valid, balanced parentheses, brackets, and braces.
 // Example:
