@@ -64,6 +64,56 @@ console.log(findMissing([1, 2, 4, 5], 5));
 // Input: '()[]{}'  → Output: trueInput: '([)]'    → Output: false
 // Hint: Use a stack (array). Push opening brackets, pop and compare for closing ones.
 
+// Answer of the Problem number 44 :
+
+// function isValidParentheses(str) {
+// //   const stack = [];
+
+// //   const pairs = {
+// //     ")": "(",
+// //     "]": "[",
+// //     "{": "}",
+// //   };
+
+// //   for (let element of str) {
+// //     if (element === "(" || element === "[" || element === "{") {
+// //       stack.push(element);
+// //     } else if (stack.pop() !== pairs[element]) {
+// //       return false;
+// //     }
+// //     return stack.length === 0;
+// //   }
+
+// }
+
+function isValidParentheses(str) {
+  const stack = [];
+
+  const map = {
+    ")": "(",
+    "]": "[",
+    "}": "{",
+  };
+
+  for (let char of str) {
+    // opening brackets
+    if (char === "(" || char === "[" || char === "{") {
+      stack.push(char);
+    }
+    // closing brackets
+    else {
+      const top = stack.pop();
+      if (top !== map[char]) {
+        return false;
+      }
+    }
+  }
+
+  return stack.length === 0;
+}
+
+console.log(isValidParentheses("([)]"));
+console.log(isValidParentheses("()[]{}"));
 // Problem 45: Binary Search  [Medium]
 // Description: Write a function binarySearch(arr, target) that searches a sorted array and returns the index of the target, or -1 if not found.
 // Example:
