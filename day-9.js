@@ -25,6 +25,19 @@ console.log(towSum([2, 7, 11, 15], 9));
 // Input: 'listen', 'silent'  → Output: trueInput: 'hello', 'world'   → Output: false
 // Hint: Sort both strings and compare, or use a character frequency map.
 
+// Answer Of the Problem 42 :
+function isAnagram(str1, str2) {
+  const sorting1 = str1.split("").sort().join("");
+  const sorting2 = str2.split("").sort().join("");
+
+  //   return (sorting1 = sorting2);
+  return sorting1 == sorting2;
+}
+
+console.log(isAnagram("listen", "silent"));
+
+console.log(isAnagram("hello", "world"));
+
 // Problem 43: Find Missing Number  [Easy]
 // Description: Given an array of n-1 integers from 1 to n with one number missing, write a function findMissing(arr, n) to find the missing number.
 // Example:
