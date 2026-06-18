@@ -101,3 +101,21 @@ console.log(romanToInt("LVIII"));
 // Example:
 // Input: 0  → Output: [1]Input: 3  → Output: [1,3,3,1]Input: 4  → Output: [1,4,6,4,1]
 // Hint: Each element is the sum of the two elements above it from the previous row.
+
+// Answer Of the Problem number 50 :
+
+function pascalRow(n) {
+  let row = [1];
+
+  let value = 1;
+
+  for (let i = 1; i <= n; i++) {
+    // const element = n[i];
+
+    value = (value * (n - i + 1)) / i;
+
+    row.push(value);
+  }
+  return row;
+}
+console.log(pascalRow(3));
