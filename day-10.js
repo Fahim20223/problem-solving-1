@@ -62,8 +62,39 @@ console.log(rotateArray([1, 2, 3, 4, 5], 2));
 // Problem 49: Roman to Integer  [Medium]
 // Description: Write a function romanToInt(s) that converts a Roman numeral string to an integer.
 // Example:
-// Input: 'III'   → Output: 3Input: 'IX'    → Output: 9Input: 'LVIII' → Output: 58
+// Input: 'III'   → Output: 3 Input: 'IX'    → Output: 9 Input: 'LVIII' → Output: 58
 // Hint: Map each symbol to its value; if a smaller value comes before a larger one, subtract it.
+
+// Answer Of the Problem number 49 :
+
+function romanToInt(s) {
+  const romanRing = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
+  };
+  let totalRing = 0;
+
+  for (let i = 0; i < s.length; i++) {
+    // let present = romanRing[i];
+    let present = romanRing[s[i]];
+    // let future = romanRing[s[i] + 1];
+    let future = romanRing[s[i + 1]];
+
+    if (present < future) {
+      totalRing -= present;
+    } else {
+      totalRing += present;
+    }
+  }
+  return totalRing;
+}
+
+console.log(romanToInt("LVIII"));
 
 // Problem 50: Pascal's Triangle Row  [Medium]
 // Description: Write a function pascalRow(n) that returns the nth row of Pascal's Triangle as an array.
