@@ -79,7 +79,7 @@ function onScroll() {
 
 const throttledScroll = throttle(onScroll, 200);
 
-// Fires at most once every 200ms
+// Fires at most once every 200ms=>>>>>>>>
 window.addEventListener("scroll", throttledScroll);
 
 // Problem 33: Deep Clone an Object  [Medium]
@@ -87,6 +87,36 @@ window.addEventListener("scroll", throttledScroll);
 // Example:
 // const a = {x: {y: 1}};const b = deepClone(a);b.x.y = 99;// a.x.y is still 1
 // Hint: Use recursion and check for object/array types.
+
+// Answer Of the Problem number 33
+
+function deepClone(obj) {
+  if (obj === null || typeof obj !== "object") {
+    return obj;
+  }
+
+  const clone = Array.isArray(obj) ? [] : {};
+
+  for (let key in obj) {
+    clone[key] = deepClone(obj[key]);
+  }
+
+  return clone;
+}
+
+// Example
+const a = {
+  x: {
+    y: 1,
+  },
+};
+
+const b = deepClone(a);
+
+b.x.y = 99;
+
+console.log(a.x.y); // 1
+console.log(b.x.y); // 99
 
 // Problem 34: Event Emitter  [Medium]
 // Description: Build a simple EventEmitter class with on(event, listener), emit(event, ...args), and off(event, listener) methods.
