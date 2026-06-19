@@ -57,6 +57,31 @@ debouncedSearch("React JS Tutorial");
 // const throttledScroll = throttle(onScroll, 200);// Fires at most once every 200ms during scroll
 // Hint: Track the last call time with Date.now().
 
+// Answer Of the Problem number 32 :
+
+function throttle(fn, limit) {
+  let lastCall = 0;
+
+  return function (...args) {
+    const now = Date.now();
+
+    if (now - lastCall >= limit) {
+      lastCall = now;
+      fn(...args);
+    }
+  };
+}
+
+// Example
+function onScroll() {
+  console.log("Scrolling...");
+}
+
+const throttledScroll = throttle(onScroll, 200);
+
+// Fires at most once every 200ms
+window.addEventListener("scroll", throttledScroll);
+
 // Problem 33: Deep Clone an Object  [Medium]
 // Description: Write a function deepClone(obj) that returns a deep copy of a plain object without using JSON.parse/JSON.stringify.
 // Example:
