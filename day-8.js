@@ -78,8 +78,65 @@ myPromiseAll([
 // Input: {a: {b: {c: 1}}}Output: {'a.b.c': 1}
 // Hint: Use recursion; build the key by joining parent keys with dots.
 
+// Answer Of the Problem number 39 :
+
+function flattenObject(obj, parentKey = "", result = {}) {
+  for (let key in obj) {
+    const newKey = parentKey ? `${parentKey}.${key}` : key;
+
+    if (
+      typeof obj[key] === "object" &&
+      obj[key] !== null &&
+      !Array.isArray(obj[key])
+    ) {
+      flattenObject(obj[key], newKey, result);
+    } else {
+      result[newKey] = obj[key];
+    }
+  }
+
+  return result;
+}
+
+// Example
+const obj = {
+  a: {
+    b: {
+      c: 1,
+    },
+  },
+};
+
+console.log(flattenObject(obj));
+// { 'a.b.c': 1 }
+
 // Problem 40: Group Array by Property  [Medium]
 // Description: Write a function groupBy(arr, key) that groups an array of objects by a given property key.
 // Example:
 // groupBy([{type:'fruit',name:'apple'},{type:'veg',name:'carrot'},{type:'fruit',name:'mango'}], 'type')// {fruit: [...], veg: [...]}
 // Hint: Use reduce() and build an object where each key maps to an array.
+
+// Answer Of the Problem number 40 :
+
+function groupBy(arr, key) {
+  return arr.reduce((groups, item) => {
+    const groupKey = item[key];
+
+    if (!groups[groupKey]) {
+      groups[groupKey] = [];
+    }
+
+    groups[groupKey].push(item);
+
+    return groups;
+  }, {});
+}
+
+// Example
+const data = [
+  { type: "fruit", name: "apple" },
+  { type: "veg", name: "carrot" },
+  { type: "fruit", name: "mango" },
+];
+
+console.log(groupBy(data, "type"));
