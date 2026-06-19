@@ -124,6 +124,53 @@ console.log(b.x.y); // 99
 // const emitter = new EventEmitter();emitter.on('greet', name => console.log('Hello ' + name));emitter.emit('greet', 'Sara'); // Hello Sara
 // Hint: Store listeners in an object where keys are event names and values are arrays of functions.
 
+// Answer Of the Problem number 34 :
+
+class EventEmitter {
+  constructor() {
+    this.events = {};
+  }
+
+  on(event, listener) {
+    if (!this.events[event]) {
+      this.events[event] = [];
+    }
+
+    this.events[event].push(listener);
+  }
+
+  emit(event, ...args) {
+    if (!this.events[event]) return;
+
+    this.events[event].forEach((listener) => {
+      listener(...args);
+    });
+  }
+
+  off(event, listener) {
+    if (!this.events[event]) return;
+
+    this.events[event] = this.events[event].filter((fn) => fn !== listener);
+  }
+}
+
+// Example
+const emitter = new EventEmitter();
+
+function greet(name) {
+  console.log("Hello " + name);
+}
+
+emitter.on("greet", greet);
+
+emitter.emit("greet", "Sara");
+// Hello Sara
+
+emitter.off("greet", greet);
+
+emitter.emit("greet", "Sara");
+// Nothing happens
+
 // Problem 35: Implement Array.prototype.map from Scratch  [Medium]
 // Description: Write a function myMap(arr, callback) that replicates the behavior of Array.prototype.map without using the built-in map().
 // Example:
